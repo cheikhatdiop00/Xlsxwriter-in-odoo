@@ -9,8 +9,7 @@ odoo methode to generate xlsx report in odoo
 
 
 
-  \\\  by cTD
-
+  \\\///  by cTD
 
 
   # migration du module private_budget sur Odoo v_14
