@@ -9,26 +9,28 @@ odoo methode to generate xlsx report in odoo
 
 
 
+  \\\  by cTD
 
 
 
+  # migration du module private_budget sur Odoo v_14
 def generate_xlsx_report(self, workbook, data, line):
-        # migration du module private_budget sur Odoo v_14
+      
         n = 0
         l=18
         p=15
         w=25
         for lines in line:
             n += 1
-            #format du text xlsx
+           
             format_colonne = workbook.add_format({'font_size': 11, 'align': 'vcenter', 'bold': True,'bg_color': '#FFC7CE'})
             format_titre = workbook.add_format({'font_size': 13, 'align': 'vcenter', 'bold': True})
             format_data =  workbook.add_format({'font_size': 11, 'align': 'vcenter', 'bold': False })
-            #format specifique
+            
             format2 = workbook.add_format({'font_size': 10, 'align': 'vcenter', })
-            #nom du sheet 1
+           
             sheet = workbook.add_worksheet('Suivi Budgetaire')
-            #dimension des colonne
+       
             sheet.set_column(7, 0, l)
             sheet.set_column(7, 1, l)
             sheet.set_column(7, 2, l)
@@ -36,7 +38,7 @@ def generate_xlsx_report(self, workbook, data, line):
             sheet.set_column(7, 4, l)
             sheet.set_column(7, 5, l)
             
-            #titre dimension
+           
             sheet.set_column(0, 0, w)
           
            
@@ -56,7 +58,7 @@ def generate_xlsx_report(self, workbook, data, line):
             
             row_xlsx = 8
             col_xlsx = 0
-            #by cTD
+          
             for line_budgetaire in (lines.line_ids):
             
                 sheet.write(row_xlsx, col_xlsx,  ('%s') % (line_budgetaire.general_budget),
